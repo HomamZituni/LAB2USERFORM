@@ -9,7 +9,18 @@ const emailError = document.getElementById('emailError');
 const passwordError = document.getElementById('passwordError');
 const confirmPasswordError = document.getElementById('confirmPasswordError')
 
-//Task Two: 
+//Task Two: Load a Saved Username
+function displayUsername () {
+const namefromLocalStorage = localStorage.getItem("name");
+if(namefromLocalStorage) {
+usernameText.textContent = namefromLocalStorage 
+} else {
+usernameText.textContent = "Name does not exist"
+}
+}
+displayUserName()
+
+
 
 
 
