@@ -20,7 +20,14 @@ usernameText.textContent = "Name does not exist"
 }
 displayUserName()
 
+// Task 3.1: Input event listeners 
+usernameInput.addEventListener('input', validateUsername);
+emailInput.addEventListener('input', validateEmail);
+passwordInput.addEventListener('input', validatePassword);
+confirmPasswordInput.addEventListener('input', validateConfirmPassword);
 
+// Task 3.2 check validation with constraint validation API
+    const inputElement = document.getElementById('InsertyourInputId');
 
-
+// Task 3.3 For the “Confirm Password” field, explicitly check if it matches the “Password” field.
 
