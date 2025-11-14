@@ -50,7 +50,7 @@ passwordError.textContent = "Password is required";
 } else if (passwordInput.validity.tooShort) {
 passwordError.textContent = "Password must be at least 8 characters";
 } else if (passwordInput.validity.patternMismatch) {
-passwordError.textContent = "Password must include uppercase, lowercase, and a number";
+passwordError.textContent = "Password must be 8 characters and only contain letters and numbers";
 } else {
 passwordError.textContent = "";
 }
