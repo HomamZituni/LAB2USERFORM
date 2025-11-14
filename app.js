@@ -34,11 +34,13 @@ usernameError.textContent = ""; }
 emailInput.addEventListener("input", () => {
 if (emailInput.validity.valueMissing) {
 emailError.textContent = "Email is required";
-} else if (usernameInput.validity.typeMismatch) {
-emailError.textContent = "please enter valid email";
+} else if (emailInput.validity.typeMismatch) {
+emailError.textContent = "Please enter a valid email";
 } else {
-usernameError.textContent = ""; }
+emailError.textContent = "";
+  }
 });
+
 
 // password input validation
 
@@ -67,10 +69,10 @@ confirmPasswordError.textContent = "";
 registrationForm.addEventListener("submit", function(e) {
   e.preventDefault();
 
-usernameInput.dispatchEvent(new Event("input"));
-emailInput.dispatchEvent(new Event("input"));
-passwordInput.dispatchEvent(new Event("input"));
-confirmPasswordInput.dispatchEvent(new Event("input"));
+  usernameInput.dispatchEvent(new Event("input"));
+  emailInput.dispatchEvent(new Event("input"));
+  passwordInput.dispatchEvent(new Event("input"));
+  confirmPasswordInput.dispatchEvent(new Event("input"));
 
   if (usernameError.textContent !== "") {
     usernameInput.focus();
@@ -81,9 +83,11 @@ confirmPasswordInput.dispatchEvent(new Event("input"));
   } else if (confirmPasswordError.textContent !== "") {
     confirmPasswordInput.focus();
   } else {
-    // All fields are valid
+    
     localStorage.setItem("username", usernameInput.value);
     alert("Registration successful!");
-    registrationForm.reset();
+    setTimeout(() => {
+      registrationForm.reset();
+    }, 10); 
   }
 });
